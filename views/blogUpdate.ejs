@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<!-- <%- include("./head"); %> -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>編集ページ</title>
+	</head>
+	<body>
+		<!-- <%- include("./header"); %> -->
+		<header>Header</header>
+		<main>
+			<form action="/blog/update/<%= singleBlog._id %>" method="POST">
+				<label for="title">タイトル</label>
+				<input type="text" name="title" value="<%= singleBlog.title %>" />
+				<label for="summary">要約</label>
+				<input type="text" name="summary" value="<%= singleBlog.summary %>" />
+				<label for="image">イメージ</label>
+				<input type="text" name="image" value="<%= singleBlog.image %>" />
+				<label for="textBody">本文</label>
+				<textarea name="textBody" rows="15">
+<%- singleBlog.textBody %></textarea
+				>
+				<br />
+				<button type="submit">変更を反映する</button>
+			</form>
+		</main>
+		<!-- <%- include("./footer"); %> -->
+		<footer>Footer</footer>
+	</body>
+</html>
